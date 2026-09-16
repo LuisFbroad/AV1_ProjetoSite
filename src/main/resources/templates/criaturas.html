@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/responsividade.css}">
+    <link rel="stylesheet" th:href="@{/css/creatures.css}">
+
+    <title>Criaturas</title>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+
+        <div class="logo">
+            <a th:href="@{/}">
+                <span class="destaque_logo">SUB</span>NAUTICA
+            </a>
+        </div>
+
+        <button class="menu_toggle" aria-label="Abrir menu">
+            &#9776;
+        </button>
+
+        <ul class="nav_links">
+            <li>
+                <a th:href="@{/mapa}">MAPA</a>
+            </li>
+
+            <li>
+                <a href="#">PROJETOS</a>
+            </li>
+
+            <li>
+                <a th:href="@{/items}">ITENS</a>
+            </li>
+
+            <li>
+                <a class="active_link" th:href="@{/criaturas}">CRIATURAS</a>
+            </li>
+
+            <li>
+                <a href="#">BIOMODS</a>
+            </li>
+
+            <li>
+                <a href="#">AGRICULTURA</a>
+            </li>
+
+            <li>
+                <a href="#">NOTÍCIAS</a>
+            </li>
+        </ul>
+
+    </nav>
+</header>
+
+
+<main class="development_page">
+
+    <section class="development_content">
+
+        <span class="section_tag">WIKI GX</span>
+
+        <h1>
+            Criaturas
+        </h1>
+
+        <div class="development_icon">
+            ⚙
+        </div>
+
+        <h2>
+            Página em desenvolvimento
+        </h2>
+
+        <p>
+            Estamos trabalhando nesta seção da Wiki GX.
+            Em breve você poderá consultar informações,
+            características e detalhes sobre as criaturas
+            de Subnautica.
+        </p>
+
+        <a th:href="@{/}" class="btn-ex">
+            Voltar para o início
+        </a>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <div class="footer_content">
+
+        <p id="footer_msg">
+            &copy; 2026 Subnautica 2 GX. Desenvolvido por fãs.
+        </p>
+
+        <p class="aviso_legal">
+            Este site não é afiliado à Unknown Worlds Entertainment.
+            Com inspiração no site oficial WIKI.GG. Todos os materiais do jogo
+            são propriedade de seus respectivos donos.
+        </p>
+
+        <div class="footer_links">
+            <a href="#">Privacidade</a>
+            <a href="#">Termos</a>
+            <a href="#">Suporte</a>
+        </div>
+
+    </div>
+</footer>
+
+
+<script th:src="@{/js/main.js}"></script>
+
+</body>
+
+</html>

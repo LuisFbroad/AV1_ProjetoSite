@@ -1,0 +1,71 @@
+/* ==========================================
+    RESPONSIVIDADE DA NAVBAR E MENU RETRÁTIL
+   ========================================== */
+@media (max-width: 1024px) {
+    
+    .menu_toggle {
+        display: block; /* Mostra o botão hambúrguer nas telas menores */
+    }
+
+    .nav_links {
+        display: none; /* Esconde a lista horizontal padrão */
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        
+        position: absolute;
+        top: 100%; /* Brota exatamente abaixo da barra preta */
+        left: 0;
+        width: 100%;
+        background-color: black;
+        border-bottom: 2px solid rgba(56, 189, 248, 0.2);
+        padding: 10px 0;
+    }
+
+    /* Injetado via JavaScript ao clicar no botão */
+    .nav_links.active {
+        display: flex; 
+    }
+
+    .nav_links a {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-radius: 0;
+    }
+}
+
+/* ==========================================
+    RESPONSIVIDADE DO CONTEÚDO (CELULARES)
+   ========================================== */
+@media (max-width: 768px) {
+    
+    main h1 {
+        font-size: 50px; /* Reduz o título gigante para não vazar da tela */
+    }
+
+    .card_grid {
+        grid-template-columns: 1fr; /* Transforma as 2 colunas em 1 única coluna */
+        padding: 0 10px;
+    }
+    
+    .bloco_de_text {
+        width: 100%;
+        padding: 20px 10px;
+    }
+
+    /* Ajusta os itens de notícias para empilharem em telas muito pequenas */
+    .news_items {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .news_thumb {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .news_content p {
+        text-align: center;
+    }
+}

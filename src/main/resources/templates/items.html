@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/items.css}">
+    <link rel="stylesheet" th:href="@{/css/responsividade.css}">
+
+    <title>Itens - Subnautica GX</title>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+
+        <div class="logo">
+            <a th:href="@{/}">
+                <span class="destaque_logo">SUB</span>NAUTICA
+            </a>
+        </div>
+
+        <button class="menu_toggle" aria-label="Abrir menu">
+            &#9776;
+        </button>
+
+        <ul class="nav_links">
+
+            <li>
+                <a th:href="@{/mapa}">
+                    MAPA
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    PROJETOS
+                </a>
+            </li>
+
+            <li>
+                <a class="active_link" th:href="@{/items}">
+                    ITENS
+                </a>
+            </li>
+
+            <li>
+                <a th:href="@{/criaturas}">
+                    CRIATURAS
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    BIOMODS
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    AGRICULTURA
+                </a>
+            </li>
+
+            <li>
+                <a th:href="@{/#noticias}">
+                    NOTÍCIAS
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+</header>
+
+
+<main class="items_page">
+
+    <section class="items_hero">
+
+        <span class="section_tag">
+            BANCO DE DADOS
+        </span>
+
+        <h1>
+            Itens de <span>Subnautica</span>
+        </h1>
+
+        <p>
+            Consulte recursos, ferramentas, equipamentos, consumíveis,
+            veículos e componentes essenciais para sobreviver no Planeta 4546B.
+        </p>
+
+    </section>
+
+
+    <section class="items_panel">
+
+        <div class="search_box">
+
+            <span class="search_icon">
+                ⌕
+            </span>
+
+            <input
+                    type="search"
+                    id="item_search"
+                    placeholder="Pesquisar item..."
+                    autocomplete="off">
+
+        </div>
+
+
+        <div class="filters_container">
+
+            <button
+                    class="filter_button active"
+                    data-category="todos"
+                    type="button">
+                Todos
+            </button>
+
+            <button
+                    class="filter_button"
+                    data-category="recursos"
+                    type="button">
+                Recursos
+            </button>
+
+            <button
+                    class="filter_button"
+                    data-category="materiais"
+                    type="button">
+                Materiais
+            </button>
+
+            <button
+                    class="filter_button"
+                    data-category="tecnologia"
+                    type="button">
+                Tecnologia
+            </button>
+
+            <button
+                    class="filter_button"
+                    data-category="ferramentas"
+                    type="button">
+                Ferramentas
+            </button>
+
+            <button
+                    class="filter_button"
+                    data-category="equipamentos"
+                    type="button">
+                Equipamentos
+            </button>
+
+            <button
+                    class="filter_button"
+                    data-category="consumiveis"
+                    type="button">
+                Consumíveis
+            </button>
+
+            <button
+                    class="filter_button"
+                    data-category="veiculos"
+                    type="button">
+                Veículos
+            </button>
+
+            <button
+                    class="filter_button"
+                    data-category="modulos"
+                    type="button">
+                Módulos
+            </button>
+
+            <button
+                    class="filter_button"
+                    data-category="base"
+                    type="button">
+                Base
+            </button>
+
+            <button
+                    class="filter_button"
+                    data-category="energia"
+                    type="button">
+                Energia
+            </button>
+
+            <button
+                    class="filter_button"
+                    data-category="peixes"
+                    type="button">
+                Peixes
+            </button>
+
+            <button
+                    class="filter_button"
+                    data-category="plantas"
+                    type="button">
+                Plantas
+            </button>
+
+            <button
+                    class="filter_button"
+                    data-category="ovos"
+                    type="button">
+                Ovos
+            </button>
+
+            <button
+                    class="filter_button"
+                    data-category="alienigenas"
+                    type="button">
+                Alienígenas
+            </button>
+
+            <button
+                    class="filter_button"
+                    data-category="especiais"
+                    type="button">
+                Especiais
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section class="items_results">
+
+        <p id="items_count">
+            Carregando itens...
+        </p>
+
+        <button
+                id="clear_filters"
+                type="button">
+            Limpar filtros
+        </button>
+
+    </section>
+
+
+    <section
+            class="items_grid"
+            id="items_grid">
+    </section>
+
+
+    <section
+            class="empty_state hidden"
+            id="empty_state">
+
+        <span>
+            ⌕
+        </span>
+
+        <h2>
+            Nenhum item encontrado
+        </h2>
+
+        <p>
+            Tente pesquisar outro nome ou remova os filtros selecionados.
+        </p>
+
+    </section>
+
+</main>
+
+
+<div
+        class="item_modal hidden"
+        id="item_modal">
+
+    <div
+            class="modal_backdrop"
+            id="modal_backdrop">
+    </div>
+
+
+    <article
+            class="modal_content"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal_title">
+
+        <button
+                class="modal_close"
+                id="modal_close"
+                type="button"
+                aria-label="Fechar detalhes">
+            ×
+        </button>
+
+        <div id="modal_item_content"></div>
+
+    </article>
+
+</div>
+
+
+<footer>
+
+    <div class="footer_content">
+
+        <p id="footer_msg">
+            &copy; 2026 Subnautica 2 GX. Desenvolvido por fãs.
+        </p>
+
+
+        <p class="aviso_legal">
+
+            Este site não é afiliado à Unknown Worlds Entertainment.
+            Com inspiração no site oficial WIKI.GG. Todos os materiais do jogo
+            são propriedade de seus respectivos donos.
+
+        </p>
+
+
+        <div class="footer_links">
+
+            <a href="#">
+                Privacidade
+            </a>
+
+            <a href="#">
+                Termos
+            </a>
+
+            <a href="#">
+                Suporte
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script th:src="@{/js/main.js}"></script>
+<script th:src="@{/js/items_data.js}"></script>
+<script th:src="@{/js/items.js}"></script>
+
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/map.css}">
+    <link rel="stylesheet" th:href="@{/css/responsividade.css}">
+
+    <title>Mapa Interativo - Subnautica GX</title>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+
+        <div class="logo">
+            <a th:href="@{/}">
+                <span class="destaque_logo">SUB</span>NAUTICA
+            </a>
+        </div>
+
+        <button class="menu_toggle" aria-label="Abrir menu">
+            &#9776;
+        </button>
+
+        <ul class="nav_links">
+
+            <li>
+                <a class="active_link" th:href="@{/mapa}">
+                    MAPA
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    PROJETOS
+                </a>
+            </li>
+
+            <li>
+                <a th:href="@{/items}">
+                    ITENS
+                </a>
+            </li>
+
+            <li>
+                <a th:href="@{/criaturas}">
+                    CRIATURAS
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    BIOMODS
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    AGRICULTURA
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    NOTÍCIAS
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+</header>
+
+
+<div id="map_page">
+
+    <aside id="map_sidebar">
+
+        <div class="map_brand">
+            <span class="map_brand_title">SUBNAUTICA</span>
+            <span class="map_brand_subtitle">GUIA DO MAPA</span>
+        </div>
+
+
+        <div class="map_description">
+
+            <p>
+                Explore o Planeta 4546B usando o mapa interativo.
+                Abra as categorias abaixo para consultar informações
+                úteis antes de iniciar sua exploração.
+            </p>
+
+        </div>
+
+
+        <div class="map_actions">
+
+            <a href="https://mapgenie.io/subnautica/maps/world"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                ABRIR MAPA EM TELA CHEIA
+
+            </a>
+
+        </div>
+
+
+        <div class="sidebar_tabs">
+
+            <button class="tab active" type="button">
+                GUIA
+            </button>
+
+            <button class="tab" type="button">
+                SUBNAUTICA 1
+            </button>
+
+        </div>
+
+
+        <div id="markers_list">
+
+
+            <details class="marker_category" open>
+
+                <summary class="category_header">
+
+                    <span>
+                        Recursos e materiais
+                    </span>
+
+                    <span class="arrow">
+                        ⌄
+                    </span>
+
+                </summary>
+
+
+                <div class="category_content">
+
+                    <p>
+                        Localize materiais para fabricar ferramentas,
+                        veículos, módulos e construções de base.
+                    </p>
+
+                    <ul>
+                        <li>Minérios e metais</li>
+                        <li>Cristais e materiais raros</li>
+                        <li>Recursos orgânicos</li>
+                        <li>Fragmentos de projetos</li>
+                        <li>Materiais de construção</li>
+                    </ul>
+
+                </div>
+
+            </details>
+
+
+            <details class="marker_category">
+
+                <summary class="category_header">
+
+                    <span>
+                        Criaturas
+                    </span>
+
+                    <span class="arrow">
+                        ⌄
+                    </span>
+
+                </summary>
+
+
+                <div class="category_content">
+
+                    <p>
+                        Consulte as regiões de cada espécie e prepare-se
+                        antes de explorar locais com fauna agressiva.
+                    </p>
+
+                    <ul>
+                        <li>Fauna passiva</li>
+                        <li>Fauna agressiva</li>
+                        <li>Leviatãs</li>
+                        <li>Ovos de criaturas</li>
+                        <li>Habitat das espécies</li>
+                    </ul>
+
+                </div>
+
+            </details>
+
+
+            <details class="marker_category">
+
+                <summary class="category_header">
+
+                    <span>
+                        Biomas
+                    </span>
+
+                    <span class="arrow">
+                        ⌄
+                    </span>
+
+                </summary>
+
+
+                <div class="category_content">
+
+                    <p>
+                        Cada bioma possui recursos, criaturas, profundidade
+                        e riscos próprios para a sua exploração.
+                    </p>
+
+                    <ul>
+                        <li>Floresta de Kelp</li>
+                        <li>Planalto Gramado</li>
+                        <li>Floresta de Cogumelos</li>
+                        <li>Rio Perdido</li>
+                        <li>Zona de Lava</li>
+                    </ul>
+
+                </div>
+
+            </details>
+
+
+            <details class="marker_category">
+
+                <summary class="category_header">
+
+                    <span>
+                        Destroços e cápsulas
+                    </span>
+
+                    <span class="arrow">
+                        ⌄
+                    </span>
+
+                </summary>
+
+
+                <div class="category_content">
+
+                    <p>
+                        Destroços escondem fragmentos de tecnologia,
+                        recursos e salas exploráveis. Cápsulas do tempo
+                        podem conter itens e mensagens de outros jogadores.
+                    </p>
+
+                    <ul>
+                        <li>Destroços exploráveis</li>
+                        <li>Fragmentos tecnológicos</li>
+                        <li>Cápsulas do tempo</li>
+                        <li>Entradas e saídas</li>
+                        <li>Salas bloqueadas</li>
+                    </ul>
+
+                </div>
+
+            </details>
+
+
+            <details class="marker_category">
+
+                <summary class="category_header">
+
+                    <span>
+                        Pontos de interesse
+                    </span>
+
+                    <span class="arrow">
+                        ⌄
+                    </span>
+
+                </summary>
+
+
+                <div class="category_content">
+
+                    <p>
+                        Pontos importantes para a progressão, exploração,
+                        construção de bases e descobertas da história.
+                    </p>
+
+                    <ul>
+                        <li>Aurora</li>
+                        <li>Ilha Flutuante</li>
+                        <li>Ilha da Montanha</li>
+                        <li>Instalações alienígenas</li>
+                        <li>Portais de teleporte</li>
+                    </ul>
+
+                </div>
+
+            </details>
+
+
+            <div class="sidebar_notice">
+
+                <p>
+                    Use os filtros e a busca disponíveis dentro do mapa
+                    para localizar marcadores específicos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <main id="map_container">
+
+        <iframe
+                src="https://mapgenie.io/subnautica/maps/world?embed=light"
+                title="Mapa interativo de Subnautica"
+                loading="lazy"
+                allowfullscreen>
+        </iframe>
+
+    </main>
+
+</div>
+
+
+<footer>
+
+    <div class="footer_content">
+
+        <p id="footer_msg">
+            &copy; 2026 Subnautica 2 GX. Desenvolvido por fãs.
+        </p>
+
+
+        <p class="aviso_legal">
+
+            Este site não é afiliado à Unknown Worlds Entertainment.
+            Com inspiração no site oficial WIKI.GG. Todos os materiais do jogo
+            são propriedade de seus respectivos donos.
+
+        </p>
+
+
+        <div class="footer_links">
+
+            <a href="#">
+                Privacidade
+            </a>
+
+            <a href="#">
+                Termos
+            </a>
+
+            <a href="#">
+                Suporte
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script th:src="@{/js/main.js}"></script>
+
+</body>
+
+</html>
